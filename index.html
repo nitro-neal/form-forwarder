@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Forwarder</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- JQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"
+    ></script>
+    <!-- MDB core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"
+    ></script>
+    <style>
+      .centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+      }
+
+      .codeText {
+        background-color: #3d4450;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="centered" style="background-color : #3d4450">
+    <div class="card card-image">
+      <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+        <div class="py-5">
+          <!-- Content -->
+          <h5 class="h5 blue-text">
+            <i class="fas fa-camera-retro"></i> Form Forwarder
+          </h5>
+          <h2 class="card-title h2 my-4 py-2">Such Form, Much Forward</h2>
+          <p class="mb-4 pb-2 px-md-5 mx-md-5">
+            Make a cool site with a simple form handler that will email you
+            without setting up a custom backend handler.
+          </p>
+
+          <p style="padding-bottom:20px">
+            Simply do a post request to the following api with your fields
+          </p>
+
+          <div class="codeText">
+            <code>
+              http://formforwarder.xyz/api/send-email/myemail@email.com
+            </code>
+          </div>
+
+          <!-- <a class="btn peach-gradient"
+            ><i class="fas fa-clone left"></i> View project</a
+          > -->
+
+          <p style="padding-top:40px">
+            Great job! You now have all your forms from your contact form
+            instantly forwarded to the email of your choice.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
