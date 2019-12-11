@@ -5,7 +5,6 @@ const EmailGenerator = require("./EmailGenerator");
 const { sendEmail } = require("./MGServer");
 
 const app = express();
-const emailGenerator = new EmailGenerator();
 
 app.use(express.json());
 
@@ -18,6 +17,7 @@ app.get("/", function(req, res) {
 });
 
 app.post("/api/send-email/:email", (req, res) => {
+  const emailGenerator = new EmailGenerator();
   emailGenerator.addRows(req.body);
 
   const result = validateSendEmailReq(req.params.email);
