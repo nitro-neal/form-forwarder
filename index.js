@@ -16,7 +16,7 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
-app.post("/api/send-email/:email", (req, res) => {
+app.post("/:email", (req, res) => {
   const emailGenerator = new EmailGenerator();
   emailGenerator.addRows(req.body);
 
