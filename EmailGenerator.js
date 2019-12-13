@@ -16,11 +16,13 @@ module.exports = EmailGenerator = class {
   addRows(keyValuePairs) {
     let tableRows = "";
     for (let [key, value] of Object.entries(keyValuePairs)) {
-      tableRows += `
-      <tr>
-      <td><strong>${key}</strong></td>
-      <td>${value}</td>
-      </tr>`;
+      if (key.length > 0 && key[0] !== "_") {
+        tableRows += `
+          <tr>
+          <td><strong>${key}</strong></td>
+          <td>${value}</td>
+          </tr>`;
+      }
     }
 
     this.bodyMsg = this.bodyMsg.replace("TABLE_ROWS", tableRows);

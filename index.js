@@ -6,7 +6,8 @@ const { sendEmail } = require("./MGServer");
 
 const app = express();
 
-app.use(express.json());
+// app.use(express.json());
+app.use(express.urlencoded());
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -23,6 +24,7 @@ app.get("/", function(req, res) {
 
 app.post("/:email", (req, res) => {
   const emailGenerator = new EmailGenerator();
+  console.log(req.body);
   emailGenerator.addRows(req.body);
 
   const result = validateSendEmailReq(req.params.email);
@@ -33,7 +35,12 @@ app.post("/:email", (req, res) => {
   }
 
   sendEmail(req.params.email, emailGenerator.getHtml());
-  res.send(req.body);
+
+  if (req.body._next !== undefined && req.body._next.length > 0) {
+    res.redirect(req.body._next);
+  } else {
+    res.send("Your form has been submitted! Thank you! " + req.body);
+  }
 });
 
 function validateSendEmailReq(email) {
